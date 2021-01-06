@@ -88,7 +88,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: process.env.NODE_ENV,
+      http: process.env.HTTP_PATH
     }
   }
 }
