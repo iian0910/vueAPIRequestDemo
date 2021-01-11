@@ -1,5 +1,6 @@
 <template>
   <div class="mainContent">
+    <loading :active.sync="isLoading"></loading>
     <div class="container">
       <div class="row my-4 align-items-center">
         <div class="col-md-1">
@@ -12,7 +13,7 @@
         </div>
       </div>
       <div class="row mb-4">
-        <div class="col-md-12">
+        <div class="col-md-10">
           <select class="custom-select" id="inputGroupSelect03" v-model="currentZone">
             <option value="">----- 全選 -----</option>
             <option
@@ -21,6 +22,10 @@
               :value="item"
             >{{item}}</option>
           </select>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-info" @click="getData()">資料載入</button>
+          <button type="button" class="btn btn-danger" @click="clean()">清除</button>
         </div>
       </div>
       <div class="row">
@@ -62,17 +67,24 @@ export default {
     return {
       data: [],
       zone: [],
-      currentZone: ''
+      currentZone: '',
+      isLoading: false
     }
   },
   methods: {
     getData () {
       const vm = this
       const api = process.env.HTTP_PATH
-      vm.$http.get(api).then((res) => {
-        this.data = res.data.result.records
-        this.getZone()
-      })
+      vm.isLoading = true
+      vm.$http.get(api)
+        .then(res => {
+          vm.isLoading = false
+          this.data = res.data.result.records
+          this.getZone()
+        })
+        .catch(error => {
+          console.log(error)
+        })
     },
     getZone () {
       this.data.filter(item => {
@@ -84,6 +96,9 @@ export default {
     },
     zoneFilter (event) {
       console.log('event', event.target.value)
+    },
+    clean () {
+      this.data = []
     }
   },
   computed: {
