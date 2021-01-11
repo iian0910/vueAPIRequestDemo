@@ -1,7 +1,17 @@
 <template>
   <div class="mainContent">
     <div class="container">
-      <div class="row my-4">
+      <div class="row my-4 align-items-center">
+        <div class="col-md-1">
+          <div class="vueImg"></div>
+        </div>
+        <div class="col-md-11">
+          <p class="p-0 m-0">
+            官方敘述：有很多時候你在建構應用程式的時需要訪問一個 API 並展開其數據，做這件事的方式有好幾種，而基於 promise 使用的 HTTP 客戶端，AXIOS 則是其中非常流行的一種 <a href="https://cn.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html">連結</a>
+          </p>
+        </div>
+      </div>
+      <div class="row mb-4">
         <div class="col-md-12">
           <select class="custom-select" id="inputGroupSelect03" v-model="currentZone">
             <option value="">----- 全選 -----</option>
