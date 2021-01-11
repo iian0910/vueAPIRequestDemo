@@ -13,6 +13,47 @@
   padding-top: 30%;
 }
 
+.officialInfo {
+  padding: 5px;
+  border: solid 3px green;
+  border-radius: 5px;
+  position: relative;
+  &::after{
+    content: '';
+    display: block;
+    border-color: white white transparent transparent;
+    border-style: solid solid solid solid;
+ 
+    /* 設定邊框（上、下；左、右）大小相同的數值，可拼湊出任意形狀的三角形 */
+    border-width: 10px 10px; 
+ 
+    /* 設定 width、height 可更好理解原理 */
+    height: 0px; 
+    width: 0px;
+    transform: rotate(225deg) translateY(50%);
+    position: absolute;
+    top: 50%;
+    left: -16px;
+  }
+  &::before{
+    content: '';
+    display: block;
+    border-color: green green transparent transparent;
+    border-style: solid solid solid solid;
+ 
+    /* 設定邊框（上、下；左、右）大小相同的數值，可拼湊出任意形狀的三角形 */
+    border-width: 10px 10px; 
+ 
+    /* 設定 width、height 可更好理解原理 */
+    height: 0px; 
+    width: 0px;
+    transform: rotate(225deg) translateY(50%);
+    position: absolute;
+    top: 50%;
+    left: -20px;
+  }
+}
+
 .card-head {
   position: relative;
   .zoneTeg {
