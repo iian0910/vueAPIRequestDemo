@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-10">
           <p class="m-0 officialInfo">
-            官方敘述：有很多時候你在建構應用程式的時需要訪問一個 API 並展開其數據，做這件事的方式有好幾種，而基於 promise 使用的 HTTP 客戶端，AXIOS 則是其中非常流行的一種 <a href="https://cn.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html">連結</a>
+            官方敘述：有很多時候你在建構應用程式的時需要訪問一個 API 並展開其數據，做這件事的方式有好幾種，而基於 promise 使用的 HTTP 客戶端，AXIOS 則是其中非常流行的一種 <a href="https://cn.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html">原文連結</a>
           </p>
         </div>
       </div>
