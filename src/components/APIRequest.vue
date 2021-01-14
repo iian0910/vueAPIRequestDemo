@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="row mb-4">
-        <div class="col-md-10">
+        <div class="col-md">
           <select class="custom-select" id="inputGroupSelect03" v-model="currentZone">
             <option value="">----- 全選 -----</option>
             <option
@@ -22,10 +22,6 @@
               :value="item"
             >{{item}}</option>
           </select>
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="btn btn-info" @click="getData()">資料載入</button>
-          <button type="button" class="btn btn-danger" @click="clean()">清除</button>
         </div>
       </div>
       <div class="row">
@@ -74,7 +70,7 @@ export default {
   methods: {
     getData () {
       const vm = this
-      const api = process.env.HTTP_PATH
+      const api = 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json'
       vm.isLoading = true
       vm.$http.get(api)
         .then(res => {
@@ -96,9 +92,6 @@ export default {
     },
     zoneFilter (event) {
       console.log('event', event.target.value)
-    },
-    clean () {
-      this.data = []
     }
   },
   computed: {
